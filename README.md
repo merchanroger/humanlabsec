@@ -1,5 +1,17 @@
-# LABS — réplica estática independiente
+# LABS — versión corregida para GitHub Pages
 
-Proyecto preparado para GitHub Pages. Incluye rutas independientes para Inicio, Nosotros, Notas de salud, cada nota individual y Contactos.
+Esta versión mantiene el diseño existente y aplica únicamente las correcciones solicitadas:
 
-La web oficial de LABS se utilizó como referencia de contenido, navegación e identidad visual. Las notas están reproducidas dentro del nuevo proyecto y no enlazan a labs.ec para su contenido interno.
+- Navegación independiente para Inicio, Nosotros, Notas de salud, Contacto y Cotizador.
+- Footer común al final de cada página.
+- Estado normal del menú en negro, hover verde LABS y activo negro con subrayado verde LABS.
+- Cotizador como página independiente, conservando selección, eliminación, total, datos del cliente y PDF.
+- Verde LABS unificado en `#2F908E` y naranja secundario en `#EF7D32`.
+- Menor uso de naranja; precios y números del cotizador en color neutro.
+- PDF con la misma paleta visual.
+- Selector ES | EN para la interfaz.
+- Guayaquil identificada como Sede Principal.
+- Contenido institucional de Nosotros completado con referencia al sitio oficial de LABS.
+- Responsive para escritorio, tablet y móvil.
+
+La carpeta raíz contiene directamente `index.html`, por lo que puede subirse al repositorio de GitHub Pages sin tener que entrar a una carpeta adicional.
