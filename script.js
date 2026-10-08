@@ -1,400 +1,24 @@
 const exams=[
-['Ácido úrico',
-'$3,30'],
-['Albúmina',
-'$3,30'],
-['Amilasa',
-'$4,00'],
-['Aglutinaciones febriles',
-'$7,00'],
-['ASTO - Antiestreptolisina',
-'$8,80'],
-['Alfa feto proteínas - AFP',
-'$13,28'],
-['Ácido fólico',
-'$13,00'],
-['ACTIN F. IgA / ACTIN',
-'$28,60'],
-['ACTIN IgG',
-'$28,60'],
-['ANCA C-P',
-'$40,00'],
-['ASCA IgG',
-'$25,50'],
-['ASCA IgA',
-'$25,50'],
-['Antitrombina',
-'$39,61'],
-['Apolipoproteína A1',
-'$15,40'],
-['Apolipoproteína B',
-'$9,36'],
-['BUN (incluye urea)',
-'$6,09'],
-['Creatinina',
-'$3,30'],
-['Colesterol total',
-'$3,30'],
-['Colesterol HDL',
-'$5,50'],
-['Colesterol LDL',
-'$5,60'],
-['Coprocultivo (heces)',
-'$22,00'],
-['Calcio',
-'$4,00'],
-['CA 125 (ovario, útero)',
-'$15,40'],
-['Ceruloplasmina',
-'$35,07'],
-['Calprotectina',
-'$36,40'],
-['Calcio iónico',
-'$8,00'],
-['Cloro',
-'$3,38'],
-['Cardiolipina IgG',
-'$24,44'],
-['Cardiolipina IgM',
-'$24,44'],
-['CK MB-CPK',
-'$13,52'],
-['Creatinina (orina)',
-'$6,09'],
-['Colinesterasa',
-'$4,40'],
-['Interleukina 6',
-'$34,00'],
-['Insulina plasmática en ayunas',
-'$14,30'],
-['IgG por nefelometría',
-'$16,00'],
-['IgM por nefelometría',
-'$17,00'],
-['IgA por nefelometría',
-'$17,00'],
-['IgE total',
-'$16,00'],
-['Influenza A/B/H1N1 por PCR GeneXpert',
-'$188,37'],
-['Influenza A/B antígeno',
-'$28,00'],
-['Insulina 2h post prandial',
-'$34,00'],
-['KOH',
-'$13,20'],
-['Kappa (orina)',
-'$27,63'],
-['Kappa 24h',
-'$28,60'],
-['Lipasa',
-'$4,40'],
-['LDH (deshidrogenasa láctica)',
-'$4,40'],
-['Linfocitos B (CD19-CD20)',
-'$80,00'],
-['Linfocitos NK (CD16-CD56)',
-'$48,30'],
-['Lipoproteína A',
-'$16,00'],
-['Litio',
-'$16,00'],
-['Lactoferrina',
-'$20,00'],
-['Norovirus',
-'$40,00'],
-['Osmolalidad',
-'$14,49'],
-['Osteocalcina',
-'$50,72'],
-['Oxalato urinario',
-'$46,20'],
-['Opiáceos cuantitativa',
-'$11,59'],
-['Plaquetas',
-'$6,00'],
-['Prueba de Coombs directa',
-'$9,00'],
-['Prueba de Coombs indirecta',
-'$9,00'],
-['Parasitoscópico concentración (heces)',
-'$6,00'],
-['PSA total',
-'$16,93'],
-['PSA libre',
-'$25,30'],
-['Potasio',
-'$4,00'],
-['Pro-BNP',
-'$65,00'],
-['Procalcitonina',
-'$74,38'],
-['Prealbúmina',
-'$30,00'],
-['Prolactina',
-'$12,00'],
-['Progesterona',
-'$12,00'],
-['Rotavirus',
-'$13,00'],
-['R. de Widal y Weill Felix',
-'$7,00'],
-['Factor reumatoideo por nefelometría',
-'$16,00'],
-['RPR',
-'$5,00'],
-['Rubeola IgG',
-'$16,72'],
-['Rubeola IgM',
-'$16,72'],
-['Sangre oculta - HB humana',
-'$7,10'],
-['Sodio',
-'$4,00'],
-['Sodio (orina)',
-'$4,00'],
-['Strept-A',
-'$13,20'],
-['Salmonella antígeno',
-'$14,00'],
-['Urea',
-'$3,30'],
-['Urocultivo (orina)',
-'$18,00'],
-['Urea 24h',
-'$6,30'],
-['V.D.R.L.',
-'$5,50'],
-['Vitamina B12',
-'$13,00'],
-['VLDL colesterol',
-'$6,30'],
-['V.D.R.L. cuantitativo',
-'$9,00'],
-['Varicela zóster IgG',
-'$28,00'],
-['Varicela zóster IgM',
-'$21,25'],
-['Vitamina D total',
-'$32,00'],
-['Vitamina E',
-'$65,10'],
-['Virus sincitial respiratorio',
-'$36,75'],
-['Ziehl Neelsen',
-'$7,20'],
-['Zinc',
-'$35,00'],
-['Zika virus IgG',
-'$100,49'],
-['Zika virus IgM',
-'$75,74']
-].map(([name, price])=>( {
-    name, price
-}));
+['Ácido úrico','$3,30'],['Albúmina','$3,30'],['Amilasa','$4,00'],['Aglutinaciones febriles','$7,00'],['ASTO - Antiestreptolisina','$8,80'],['Alfa feto proteínas - AFP','$13,28'],['Ácido fólico','$13,00'],['ACTIN F. IgA / ACTIN','$28,60'],['ACTIN IgG','$28,60'],['ANCA C-P','$40,00'],['ASCA IgG','$25,50'],['ASCA IgA','$25,50'],['Antitrombina','$39,61'],['Apolipoproteína A1','$15,40'],['Apolipoproteína B','$9,36'],['BUN (incluye urea)','$6,09'],['Creatinina','$3,30'],['Colesterol total','$3,30'],['Colesterol HDL','$5,50'],['Colesterol LDL','$5,60'],['Coprocultivo (heces)','$22,00'],['Calcio','$4,00'],['CA 125 (ovario, útero)','$15,40'],['Ceruloplasmina','$35,07'],['Calprotectina','$36,40'],['Calcio iónico','$8,00'],['Cloro','$3,38'],['Cardiolipina IgG','$24,44'],['Cardiolipina IgM','$24,44'],['CK MB-CPK','$13,52'],['Creatinina (orina)','$6,09'],['Colinesterasa','$4,40'],['Interleukina 6','$34,00'],['Insulina plasmática en ayunas','$14,30'],['IgG por nefelometría','$16,00'],['IgM por nefelometría','$17,00'],['IgA por nefelometría','$17,00'],['IgE total','$16,00'],['Influenza A/B/H1N1 por PCR GeneXpert','$188,37'],['Influenza A/B antígeno','$28,00'],['Insulina 2h post prandial','$34,00'],['KOH','$13,20'],['Kappa (orina)','$27,63'],['Kappa 24h','$28,60'],['Lipasa','$4,40'],['LDH (deshidrogenasa láctica)','$4,40'],['Linfocitos B (CD19-CD20)','$80,00'],['Linfocitos NK (CD16-CD56)','$48,30'],['Lipoproteína A','$16,00'],['Litio','$16,00'],['Lactoferrina','$20,00'],['Norovirus','$40,00'],['Osmolalidad','$14,49'],['Osteocalcina','$50,72'],['Oxalato urinario','$46,20'],['Opiáceos cuantitativa','$11,59'],['Plaquetas','$6,00'],['Prueba de Coombs directa','$9,00'],['Prueba de Coombs indirecta','$9,00'],['Parasitoscópico concentración (heces)','$6,00'],['PSA total','$16,93'],['PSA libre','$25,30'],['Potasio','$4,00'],['Pro-BNP','$65,00'],['Procalcitonina','$74,38'],['Prealbúmina','$30,00'],['Prolactina','$12,00'],['Progesterona','$12,00'],['Rotavirus','$13,00'],['R. de Widal y Weill Felix','$7,00'],['Factor reumatoideo por nefelometría','$16,00'],['RPR','$5,00'],['Rubeola IgG','$16,72'],['Rubeola IgM','$16,72'],['Sangre oculta - HB humana','$7,10'],['Sodio','$4,00'],['Sodio (orina)','$4,00'],['Strept-A','$13,20'],['Salmonella antígeno','$14,00'],['Urea','$3,30'],['Urocultivo (orina)','$18,00'],['Urea 24h','$6,30'],['V.D.R.L.','$5,50'],['Vitamina B12','$13,00'],['VLDL colesterol','$6,30'],['V.D.R.L. cuantitativo','$9,00'],['Varicela zóster IgG','$28,00'],['Varicela zóster IgM','$21,25'],['Vitamina D total','$32,00'],['Vitamina E','$65,10'],['Virus sincitial respiratorio','$36,75'],['Ziehl Neelsen','$7,20'],['Zinc','$35,00'],['Zika virus IgG','$100,49'],['Zika virus IgM','$75,74']
+].map(([name,price])=>({name,price}));
 const notes=[
-{
-    slug: 'el-estres-un-enemigo-silencioso-que-afecta-nuestra-salud-fisica-y-mental',
-    title: 'El estrés: Un enemigo silencioso que afecta nuestra salud física y mental',
-    date: '07 Nov',
-    tag: 'Labs · Salud',
-    img: 'assets/estres2.jpeg',
-    intro: 'La Organización Mundial de la Salud (OMS) define el estrés como cualquier tipo de cambio que provoca agotamiento físico, emocional o psicológico.',
-    enTitle: 'Stress: A silent enemy that affects our physical and mental health',
-    enTag: 'Health · LABS',
-    enIntro: 'The World Health Organization (WHO) defines stress as any type of change that causes physical, emotional or psychological exhaustion.',
-    enBody: ['The World Health Organization (WHO) defines stress as any type of change that causes physical, emotional or psychological exhaustion. According to the organization, it is a natural response of the human body to situations that require quick action.',
-    'Although stress can arise in response to any challenge, it is a daily phenomenon in modern life. When it becomes chronic, it can affect health.',
-    'The body responds to stress by releasing hormones such as cortisol, which activate the state of alertness, tense the muscles, and accelerate breathing and heart rate. Headaches, stomach discomfort, back pain, and insomnia are some of its manifestations.',
-    'To assess its impact, LABS notes the usefulness of hormone profiles and specific tests, always as part of a medical evaluation.',
-    'Learning to manage stress can improve quality of life. Regular exercise, relaxation techniques, and activities that promote wellbeing can help reduce tension.'],
-    body: [`La Organización Mundial de la Salud (OMS) define el estrés como cualquier tipo de cambio que provoca agotamiento físico, emocional o psicológico. Según la entidad, se trata de una respuesta natural del cuerpo humano ante situaciones que requieren una acción rápida.`,
-    `Aunque el estrés puede surgir frente a cualquier desafío, es un fenómeno cotidiano en la vida moderna. Cuando se convierte en algo crónico puede tener repercusiones en la salud.`,
-    `El cuerpo reacciona al estrés liberando hormonas como el cortisol, que activan el estado de alerta, tensionan los músculos y aceleran la respiración y el ritmo cardíaco. Dolores de cabeza, malestar estomacal, dolor de espalda e insomnio son algunas de sus manifestaciones.`,
-    `Para evaluar su impacto, LABS señala la utilidad de perfiles hormonales y pruebas específicas, siempre dentro de una evaluación médica.`,
-    `Aprender a manejar el estrés mejora la calidad de vida. El ejercicio regular, las técnicas de relajación y actividades que generen bienestar pueden ayudar a reducir la tensión.`]
-},
-{
-    slug: 'higado-el-filtro-natural-del-cuerpo',
-    title: 'Hígado, el «filtro» natural del cuerpo',
-    date: '05 Sep',
-    tag: 'Hígado · Labs',
-    img: 'assets/higado.jpeg',
-    intro: 'Mantenerlo sano a través de una buena alimentación es vital.',
-    enTitle: 'Liver, the body’s natural “filter”',
-    enTag: 'Liver · LABS',
-    enIntro: 'Keeping it healthy through good nutrition is vital.',
-    enBody: ['The liver is an essential organ with a crucial role in metabolic activity. It is located in the upper right part of the abdominal cavity and performs vital functions for overall wellbeing.',
-    'It regulates chemicals in the blood, produces bile, and processes substances that arrive from the digestive system.',
-    'Main liver functions include eliminating toxins, metabolizing medicines, secreting bile, and storing nutrients.',
-    'Prevention is key. A balanced diet, moderating fats and processed foods, avoiding excess alcohol, and maintaining physical activity are important measures.',
-    'LABS offers liver function testing to evaluate proteins, bilirubins, and liver enzymes, according to medical indication.'],
-    body: [`El hígado, un órgano esencial, tiene un papel crucial en la actividad metabólica. Se ubica en la parte superior derecha de la cavidad abdominal y cumple funciones vitales para el bienestar general.`,
-    `Es responsable de regular sustancias químicas en la sangre, producir bilis y procesar sustancias que llegan desde el aparato digestivo.`,
-    `Principales funciones del hígado: eliminación de toxinas, metabolización de medicamentos, secreción de bilis y almacenamiento de nutrientes.`,
-    `La prevención es clave. Una alimentación equilibrada, moderar el consumo de grasas y alimentos procesados, evitar el exceso de alcohol y mantener actividad física son medidas importantes.`,
-    `En LABS se puede realizar una prueba de función hepática para evaluar proteínas, bilirrubinas y enzimas hepáticas, de acuerdo con la indicación médica.`]
-},
-{
-    slug: 'rinones-los-heroes-ocultos-de-nuestro-cuerpo',
-    title: 'Riñones: los héroes ocultos de nuestro cuerpo',
-    date: '23 Jul',
-    tag: 'Labs',
-    img: 'assets/riños.jpeg',
-    intro: 'La hidratación, el ejercicio y una alimentación baja en sal son fundamentales para su cuidado.',
-    enTitle: 'Kidneys: the hidden heroes of our body',
-    enTag: 'LABS',
-    enIntro: 'Hydration, exercise, and a low-salt diet are essential for kidney care.',
-    enBody: ['The kidneys are two organs with a fundamental task: filtering the blood and removing waste. They also participate in hormonal functions and help maintain the body’s balance.',
-    'Every day they filter large amounts of blood to produce urine and help maintain the balance of water and minerals.',
-    'Poor habits can affect kidney health. These include a high-salt diet, excessive sugar intake, smoking, drinking too little water, physical inactivity, and excessive alcohol consumption.',
-    'Blood and urine tests can evaluate kidney function. LABS includes tests such as creatinine, BUN, cystatin C, and urine protein assessments.'],
-    body: [`Los riñones son dos órganos con una tarea primordial: filtrar la sangre y eliminar desechos. También participan en funciones hormonales y en el equilibrio del organismo.`,
-    `Cada día filtran grandes cantidades de sangre para producir orina y ayudar a mantener el equilibrio de agua y minerales.`,
-    `Los malos hábitos pueden afectar la salud renal. Entre ellos están una dieta alta en sal, ingerir demasiada azúcar, fumar, beber poca agua, la inactividad física y el consumo excesivo de alcohol.`,
-    `Los exámenes de sangre y orina permiten evaluar el funcionamiento renal. Entre los análisis mencionados por LABS están creatinina, BUN, cistatina C y evaluaciones de proteínas en orina.`]
-},
-{
-    slug: '4-sintomas-que-debes-saber-sobre-el-dengue',
-    title: '4 síntomas que debes saber sobre el dengue',
-    date: '05 Mar',
-    tag: 'Labs · Nacionales',
-    img: 'assets/dengue.jpeg',
-    intro: 'Fiebre alta, dolor de cabeza, dolor muscular y molestias detrás de los ojos son síntomas que requieren atención.',
-    enTitle: '4 dengue symptoms you should know',
-    enTag: 'LABS · National',
-    enIntro: 'High fever, headache, muscle pain, and discomfort behind the eyes require attention.',
-    enBody: ['The four highlighted symptoms are high fever, headache, muscle pain, and discomfort behind the eyes. When compatible symptoms appear, it is important to seek medical care and avoid self-medication.',
-    'Laboratory tests play a fundamental role in the accurate diagnosis of dengue. LABS offers specific tests such as Dengue anti-IgG, Dengue anti-IgM, and NS1 antigen, according to medical indication.',
-    'Preventive measures include eliminating standing water, using repellents, installing mosquito nets, and seeking medical advice when symptoms appear.',
-    'Prevention, early detection, and appropriate treatment are important tools in the fight against dengue.'],
-    body: [`Los cuatro síntomas destacados son fiebre alta, dolor de cabeza, dolor muscular y molestias detrás de los ojos. Ante síntomas compatibles es importante acudir a un médico y evitar la automedicación.`,
-    `Las pruebas de laboratorio desempeñan un papel fundamental en el diagnóstico preciso del dengue. LABS cuenta con pruebas específicas como Dengue anti IgG, Dengue anti IgM y antígeno NS1, según la indicación médica.`,
-    `Las medidas preventivas incluyen eliminar aguas estancadas, usar repelentes, instalar mosquiteros y acudir a consulta ante la presencia de síntomas.`,
-    `La prevención, la detección temprana y el tratamiento adecuado son herramientas importantes en la lucha contra el dengue.`]
-},
-{
-    slug: 'perdiendo-peso-que-examenes-de-laboratorio-necesito',
-    title: 'Perdiendo peso, ¿qué exámenes de laboratorio necesito?',
-    date: '05 Feb',
-    tag: 'Exámenes · Labs · Salud',
-    img: 'assets/examenes.jpeg',
-    intro: 'Bajar de peso de manera saludable requiere prevención, alimentación equilibrada, ejercicio y seguimiento médico.',
-    enTitle: 'Losing weight: which laboratory tests do I need?',
-    enTag: 'Tests · LABS · Health',
-    enIntro: 'Healthy weight loss requires prevention, a balanced diet, exercise, and medical follow-up.',
-    enBody: ['Preventive medicine plays an important role. Basic blood, stool, and urine tests can provide information about the body’s condition.',
-    'A healthy lifestyle combines a balanced diet, regular exercise, and periodic medical checkups.',
-    'Clinical tests can reveal aspects such as glucose levels, lipid profile, food intolerances, and other indicators.',
-    'Results should be interpreted with the support of healthcare professionals.'],
-    body: [`La medicina preventiva juega un papel importante. Los chequeos y exámenes básicos de sangre, heces y orina pueden aportar información sobre el estado del organismo.`,
-    `Un estilo de vida saludable combina dieta equilibrada, ejercicio regular y controles médicos periódicos.`,
-    `Los análisis clínicos pueden revelar aspectos como niveles de glucosa, perfil lipídico e intolerancias alimentarias, entre otros indicadores.`,
-    `Los resultados deben interpretarse con el acompañamiento de profesionales de la salud.`]
-},
-{
-    slug: '7-examenes-basicos-que-debes-realizarte-en-el-ano',
-    title: '7 exámenes básicos que debes realizarte en el año',
-    date: '19 Ene',
-    tag: 'Exámenes · Labs · Salud',
-    img: 'assets/examen2.jpeg',
-    intro: 'Los chequeos preventivos y análisis completos aportan información valiosa sobre el estado general de salud.',
-    enTitle: '7 basic tests you should have during the year',
-    enTag: 'Tests · LABS · Health',
-    enIntro: 'Preventive checkups and comprehensive analyses provide valuable information about general health.',
-    enBody: ['A complete blood count evaluates blood cells and is one of the most common basic tests.',
-    'A lipid profile provides information about cholesterol and triglyceride levels. Blood glucose is related to the detection and control of diabetes.',
-    'Inflammatory markers provide information about inflammation. Vitamins and minerals can also be evaluated.',
-    'Urinalysis and stool parasite testing are among the basic analyses described by LABS.',
-    'Preparation depends on the test and should follow the laboratory and healthcare professional’s instructions.'],
-    body: [`El hemograma completo evalúa las células sanguíneas y es uno de los análisis básicos más habituales.`,
-    `El perfil lipídico permite conocer niveles de colesterol y triglicéridos. La glucosa en sangre está relacionada con la detección y control de diabetes.`,
-    `Los marcadores inflamatorios aportan información sobre la presencia de inflamación. También pueden evaluarse vitaminas y minerales.`,
-    `El elemental físico químico de orina y el coproparasitario forman parte de los análisis básicos descritos por LABS.`,
-    `La preparación depende del examen y debe seguir las indicaciones del laboratorio y del profesional de salud.`]
-},
-{
-    slug: 'estres-dolor-abdominal-gases-estrenimiento',
-    title: '¿Cómo los exámenes revelan el impacto del estrés en tu salud?',
-    date: '11 Ene',
-    tag: 'Exámenes · Labs · Salud',
-    img: 'assets/estres1.jpeg',
-    intro: 'Los niveles altos de estrés pueden relacionarse con trastornos gastrointestinales y otros síntomas.',
-    enTitle: 'How do tests reveal the impact of stress on your health?',
-    enTag: 'Tests · LABS · Health',
-    enIntro: 'High stress levels can be associated with gastrointestinal disorders and other symptoms.',
-    enBody: ['Described symptoms include abdominal bloating, stomach pain, constipation, stomach pressure, loss of appetite, and dyspepsia.',
-    'Medical evaluation may be accompanied by groups of tests such as cortisol, hormone profiles, stool samples, inflammation tests, liver function, and nutrient assessments.',
-    'Together, these tests can provide the specialist with information to assess gastrointestinal health.'],
-    body: [`Entre los síntomas descritos están hinchazón abdominal, dolor de estómago, estreñimiento, opresión estomacal, falta de apetito y dispepsia.`,
-    `La evaluación médica puede acompañarse de grupos de exámenes como cortisol, perfil hormonal, muestras fecales, pruebas de inflamación, función hepática y nutrientes.`,
-    `La combinación de estas pruebas puede brindar al especialista información para valorar el estado de salud gastrointestinal.`]
-},
-{
-    slug: 'que-se-puede-ver-en-un-hemograma',
-    title: '¿Qué se puede ver en un hemograma?',
-    date: '22 Dic',
-    tag: 'Exámenes · Labs · Salud',
-    img: 'assets/hemograma.jpeg',
-    intro: 'El hemograma es uno de los análisis más comunes y aporta información sobre las células sanguíneas.',
-    enTitle: 'What can be seen in a complete blood count?',
-    enTag: 'Tests · LABS · Health',
-    enIntro: 'A complete blood count is one of the most common analyses and provides information about blood cells.',
-    enBody: ['A complete blood count evaluates the main cellular components of blood: red blood cells, white blood cells, and platelets.',
-    'It can provide useful information about hemoglobin, hematocrit, and other blood parameters.',
-    'The results must be interpreted in the clinical context and together with the patient’s symptoms and medical history.',
-    'LABS provides laboratory testing that supports medical decision-making.'],
-    body: [`El hemograma permite observar el comportamiento de glóbulos rojos, glóbulos blancos y plaquetas. Estos parámetros ayudan a valorar distintas condiciones.`,
-    `Realizarse controles puede contribuir a identificar alteraciones en etapas tempranas. La interpretación debe estar a cargo de un médico.`,
-    `Para realizar un hemograma se requiere una muestra de sangre y, según la información publicada por LABS, no es necesario estar en ayunas.`]
-},
-{
-    slug: 'los-examenes-de-laboratorio-son-necesarios-y-primordiales',
-    title: 'Los exámenes de laboratorio son necesarios y primordiales',
-    date: '15 Dic',
-    tag: 'Labs · Salud',
-    img: 'assets/examen3.jpeg',
-    intro: 'Las pruebas de laboratorio aportan información para el diagnóstico, seguimiento y prevención.',
-    enTitle: 'Laboratory tests are necessary and essential',
-    enTag: 'Tests · LABS · Health',
-    enIntro: 'Laboratory tests are an important tool for prevention, diagnosis, monitoring, and treatment follow-up.',
-    enBody: ['Laboratory testing provides objective information that helps healthcare professionals evaluate a person’s health status.',
-    'Tests can support the detection of alterations before symptoms become evident and can also help monitor known conditions.',
-    'The appropriate test depends on the clinical situation, symptoms, age, medical history, and professional indication.',
-    'Correct preparation and professional interpretation are essential for meaningful results.'],
-    body: [`Los exámenes de laboratorio se realizan a partir de muestras como sangre, orina y heces, y pueden ayudar a descubrir diversas afecciones.`,
-    `Las pruebas diagnósticas son una herramienta de apoyo para las decisiones médicas y permiten evaluar diferentes aspectos fisiológicos y bioquímicos.`,
-    `La variedad de exámenes disponibles permite personalizar el enfoque de atención y contribuir a la prevención y manejo de distintas afecciones.`]
-},
-{
-    slug: 'el-vih-y-el-sida-son-lo-mismo',
-    title: '¿El VIH y el SIDA son lo mismo?',
-    date: '01 Dic',
-    tag: 'Exámenes · Labs · Salud',
-    img: 'assets/sida.jpeg',
-    intro: 'VIH y SIDA están relacionados, pero no significan lo mismo.',
-    enTitle: 'Are HIV and AIDS the same?',
-    enTag: 'Health · LABS',
-    enIntro: 'HIV and AIDS are related concepts, but they are not the same.',
-    enBody: ['HIV is the human immunodeficiency virus. AIDS is the advanced stage of HIV infection when the immune system has been severely weakened.',
-    'An HIV diagnosis does not automatically mean that a person has AIDS. With appropriate treatment and medical follow-up, people living with HIV can maintain their health for many years.',
-    'Laboratory tests are essential for detection, monitoring, and medical follow-up.',
-    'If there is a possible exposure or concern, seek professional advice and use the appropriate testing and prevention measures.'],
-    body: [`El VIH es el virus que causa la infección, mientras que el SIDA es un síndrome que puede aparecer en una etapa avanzada de la infección.`,
-    `El virus puede transmitirse mediante determinados fluidos corporales y existen vías de transmisión sexual, sanguínea y vertical.`,
-    `Los exámenes de laboratorio son importantes para detectar y hacer seguimiento de la infección y de la respuesta al tratamiento.`]
-}
+{slug:'el-estres-un-enemigo-silencioso-que-afecta-nuestra-salud-fisica-y-mental',title:'El estrés: Un enemigo silencioso que afecta nuestra salud física y mental',date:'07 Nov',tag:'Labs · Salud',img:'assets/estres2.jpeg',intro:'La Organización Mundial de la Salud (OMS) define el estrés como cualquier tipo de cambio que provoca agotamiento físico, emocional o psicológico.',enTitle:'Stress: A silent enemy that affects our physical and mental health',enTag:'Health · LABS',enIntro:'The World Health Organization (WHO) defines stress as any type of change that causes physical, emotional or psychological exhaustion.',enBody:['The World Health Organization (WHO) defines stress as any type of change that causes physical, emotional or psychological exhaustion. According to the organization, it is a natural response of the human body to situations that require quick action.', 'Although stress can arise in response to any challenge, it is a daily phenomenon in modern life. When it becomes chronic, it can affect health.', 'The body responds to stress by releasing hormones such as cortisol, which activate the state of alertness, tense the muscles, and accelerate breathing and heart rate. Headaches, stomach discomfort, back pain, and insomnia are some of its manifestations.', 'To assess its impact, LABS notes the usefulness of hormone profiles and specific tests, always as part of a medical evaluation.', 'Learning to manage stress can improve quality of life. Regular exercise, relaxation techniques, and activities that promote wellbeing can help reduce tension.'],body:[`La Organización Mundial de la Salud (OMS) define el estrés como cualquier tipo de cambio que provoca agotamiento físico, emocional o psicológico. Según la entidad, se trata de una respuesta natural del cuerpo humano ante situaciones que requieren una acción rápida.`,`Aunque el estrés puede surgir frente a cualquier desafío, es un fenómeno cotidiano en la vida moderna. Cuando se convierte en algo crónico puede tener repercusiones en la salud.`,`El cuerpo reacciona al estrés liberando hormonas como el cortisol, que activan el estado de alerta, tensionan los músculos y aceleran la respiración y el ritmo cardíaco. Dolores de cabeza, malestar estomacal, dolor de espalda e insomnio son algunas de sus manifestaciones.`,`Para evaluar su impacto, LABS señala la utilidad de perfiles hormonales y pruebas específicas, siempre dentro de una evaluación médica.`,`Aprender a manejar el estrés mejora la calidad de vida. El ejercicio regular, las técnicas de relajación y actividades que generen bienestar pueden ayudar a reducir la tensión.`]},
+{slug:'higado-el-filtro-natural-del-cuerpo',title:'Hígado, el «filtro» natural del cuerpo',date:'05 Sep',tag:'Hígado · Labs',img:'assets/higado.jpeg',intro:'Mantenerlo sano a través de una buena alimentación es vital.',enTitle:'Liver, the body’s natural “filter”',enTag:'Liver · LABS',enIntro:'Keeping it healthy through good nutrition is vital.',enBody:['The liver is an essential organ with a crucial role in metabolic activity. It is located in the upper right part of the abdominal cavity and performs vital functions for overall wellbeing.', 'It regulates chemicals in the blood, produces bile, and processes substances that arrive from the digestive system.', 'Main liver functions include eliminating toxins, metabolizing medicines, secreting bile, and storing nutrients.', 'Prevention is key. A balanced diet, moderating fats and processed foods, avoiding excess alcohol, and maintaining physical activity are important measures.', 'LABS offers liver function testing to evaluate proteins, bilirubins, and liver enzymes, according to medical indication.'],body:[`El hígado, un órgano esencial, tiene un papel crucial en la actividad metabólica. Se ubica en la parte superior derecha de la cavidad abdominal y cumple funciones vitales para el bienestar general.`,`Es responsable de regular sustancias químicas en la sangre, producir bilis y procesar sustancias que llegan desde el aparato digestivo.`,`Principales funciones del hígado: eliminación de toxinas, metabolización de medicamentos, secreción de bilis y almacenamiento de nutrientes.`,`La prevención es clave. Una alimentación equilibrada, moderar el consumo de grasas y alimentos procesados, evitar el exceso de alcohol y mantener actividad física son medidas importantes.`,`En LABS se puede realizar una prueba de función hepática para evaluar proteínas, bilirrubinas y enzimas hepáticas, de acuerdo con la indicación médica.`]},
+{slug:'rinones-los-heroes-ocultos-de-nuestro-cuerpo',title:'Riñones: los héroes ocultos de nuestro cuerpo',date:'23 Jul',tag:'Labs',img:'assets/riños.jpeg',intro:'La hidratación, el ejercicio y una alimentación baja en sal son fundamentales para su cuidado.',enTitle:'Kidneys: the hidden heroes of our body',enTag:'LABS',enIntro:'Hydration, exercise, and a low-salt diet are essential for kidney care.',enBody:['The kidneys are two organs with a fundamental task: filtering the blood and removing waste. They also participate in hormonal functions and help maintain the body’s balance.', 'Every day they filter large amounts of blood to produce urine and help maintain the balance of water and minerals.', 'Poor habits can affect kidney health. These include a high-salt diet, excessive sugar intake, smoking, drinking too little water, physical inactivity, and excessive alcohol consumption.', 'Blood and urine tests can evaluate kidney function. LABS includes tests such as creatinine, BUN, cystatin C, and urine protein assessments.'],body:[`Los riñones son dos órganos con una tarea primordial: filtrar la sangre y eliminar desechos. También participan en funciones hormonales y en el equilibrio del organismo.`,`Cada día filtran grandes cantidades de sangre para producir orina y ayudar a mantener el equilibrio de agua y minerales.`,`Los malos hábitos pueden afectar la salud renal. Entre ellos están una dieta alta en sal, ingerir demasiada azúcar, fumar, beber poca agua, la inactividad física y el consumo excesivo de alcohol.`,`Los exámenes de sangre y orina permiten evaluar el funcionamiento renal. Entre los análisis mencionados por LABS están creatinina, BUN, cistatina C y evaluaciones de proteínas en orina.`]},
+{slug:'4-sintomas-que-debes-saber-sobre-el-dengue',title:'4 síntomas que debes saber sobre el dengue',date:'05 Mar',tag:'Labs · Nacionales',img:'assets/dengue.jpeg',intro:'Fiebre alta, dolor de cabeza, dolor muscular y molestias detrás de los ojos son síntomas que requieren atención.',enTitle:'4 dengue symptoms you should know',enTag:'LABS · National',enIntro:'High fever, headache, muscle pain, and discomfort behind the eyes require attention.',enBody:['The four highlighted symptoms are high fever, headache, muscle pain, and discomfort behind the eyes. When compatible symptoms appear, it is important to seek medical care and avoid self-medication.', 'Laboratory tests play a fundamental role in the accurate diagnosis of dengue. LABS offers specific tests such as Dengue anti-IgG, Dengue anti-IgM, and NS1 antigen, according to medical indication.', 'Preventive measures include eliminating standing water, using repellents, installing mosquito nets, and seeking medical advice when symptoms appear.', 'Prevention, early detection, and appropriate treatment are important tools in the fight against dengue.'],body:[`Los cuatro síntomas destacados son fiebre alta, dolor de cabeza, dolor muscular y molestias detrás de los ojos. Ante síntomas compatibles es importante acudir a un médico y evitar la automedicación.`,`Las pruebas de laboratorio desempeñan un papel fundamental en el diagnóstico preciso del dengue. LABS cuenta con pruebas específicas como Dengue anti IgG, Dengue anti IgM y antígeno NS1, según la indicación médica.`,`Las medidas preventivas incluyen eliminar aguas estancadas, usar repelentes, instalar mosquiteros y acudir a consulta ante la presencia de síntomas.`,`La prevención, la detección temprana y el tratamiento adecuado son herramientas importantes en la lucha contra el dengue.`]},
+{slug:'perdiendo-peso-que-examenes-de-laboratorio-necesito',title:'Perdiendo peso, ¿qué exámenes de laboratorio necesito?',date:'05 Feb',tag:'Exámenes · Labs · Salud',img:'assets/examenes.jpeg',intro:'Bajar de peso de manera saludable requiere prevención, alimentación equilibrada, ejercicio y seguimiento médico.',enTitle:'Losing weight: which laboratory tests do I need?',enTag:'Tests · LABS · Health',enIntro:'Healthy weight loss requires prevention, a balanced diet, exercise, and medical follow-up.',enBody:['Preventive medicine plays an important role. Basic blood, stool, and urine tests can provide information about the body’s condition.', 'A healthy lifestyle combines a balanced diet, regular exercise, and periodic medical checkups.', 'Clinical tests can reveal aspects such as glucose levels, lipid profile, food intolerances, and other indicators.', 'Results should be interpreted with the support of healthcare professionals.'],body:[`La medicina preventiva juega un papel importante. Los chequeos y exámenes básicos de sangre, heces y orina pueden aportar información sobre el estado del organismo.`,`Un estilo de vida saludable combina dieta equilibrada, ejercicio regular y controles médicos periódicos.`,`Los análisis clínicos pueden revelar aspectos como niveles de glucosa, perfil lipídico e intolerancias alimentarias, entre otros indicadores.`,`Los resultados deben interpretarse con el acompañamiento de profesionales de la salud.`]},
+{slug:'7-examenes-basicos-que-debes-realizarte-en-el-ano',title:'7 exámenes básicos que debes realizarte en el año',date:'19 Ene',tag:'Exámenes · Labs · Salud',img:'assets/examen2.jpeg',intro:'Los chequeos preventivos y análisis completos aportan información valiosa sobre el estado general de salud.',enTitle:'7 basic tests you should have during the year',enTag:'Tests · LABS · Health',enIntro:'Preventive checkups and comprehensive analyses provide valuable information about general health.',enBody:['A complete blood count evaluates blood cells and is one of the most common basic tests.', 'A lipid profile provides information about cholesterol and triglyceride levels. Blood glucose is related to the detection and control of diabetes.', 'Inflammatory markers provide information about inflammation. Vitamins and minerals can also be evaluated.', 'Urinalysis and stool parasite testing are among the basic analyses described by LABS.', 'Preparation depends on the test and should follow the laboratory and healthcare professional’s instructions.'],body:[`El hemograma completo evalúa las células sanguíneas y es uno de los análisis básicos más habituales.`,`El perfil lipídico permite conocer niveles de colesterol y triglicéridos. La glucosa en sangre está relacionada con la detección y control de diabetes.`,`Los marcadores inflamatorios aportan información sobre la presencia de inflamación. También pueden evaluarse vitaminas y minerales.`,`El elemental físico químico de orina y el coproparasitario forman parte de los análisis básicos descritos por LABS.`,`La preparación depende del examen y debe seguir las indicaciones del laboratorio y del profesional de salud.`]},
+{slug:'estres-dolor-abdominal-gases-estrenimiento',title:'¿Cómo los exámenes revelan el impacto del estrés en tu salud?',date:'11 Ene',tag:'Exámenes · Labs · Salud',img:'assets/estres1.jpeg',intro:'Los niveles altos de estrés pueden relacionarse con trastornos gastrointestinales y otros síntomas.',enTitle:'How do tests reveal the impact of stress on your health?',enTag:'Tests · LABS · Health',enIntro:'High stress levels can be associated with gastrointestinal disorders and other symptoms.',enBody:['Described symptoms include abdominal bloating, stomach pain, constipation, stomach pressure, loss of appetite, and dyspepsia.', 'Medical evaluation may be accompanied by groups of tests such as cortisol, hormone profiles, stool samples, inflammation tests, liver function, and nutrient assessments.', 'Together, these tests can provide the specialist with information to assess gastrointestinal health.'],body:[`Entre los síntomas descritos están hinchazón abdominal, dolor de estómago, estreñimiento, opresión estomacal, falta de apetito y dispepsia.`,`La evaluación médica puede acompañarse de grupos de exámenes como cortisol, perfil hormonal, muestras fecales, pruebas de inflamación, función hepática y nutrientes.`,`La combinación de estas pruebas puede brindar al especialista información para valorar el estado de salud gastrointestinal.`]},
+{slug:'que-se-puede-ver-en-un-hemograma',title:'¿Qué se puede ver en un hemograma?',date:'22 Dic',tag:'Exámenes · Labs · Salud',img:'assets/hemograma.jpeg',intro:'El hemograma es uno de los análisis más comunes y aporta información sobre las células sanguíneas.',enTitle:'What can be seen in a complete blood count?',enTag:'Tests · LABS · Health',enIntro:'A complete blood count is one of the most common analyses and provides information about blood cells.',enBody:['A complete blood count evaluates the main cellular components of blood: red blood cells, white blood cells, and platelets.', 'It can provide useful information about hemoglobin, hematocrit, and other blood parameters.', 'The results must be interpreted in the clinical context and together with the patient’s symptoms and medical history.', 'LABS provides laboratory testing that supports medical decision-making.'],body:[`El hemograma permite observar el comportamiento de glóbulos rojos, glóbulos blancos y plaquetas. Estos parámetros ayudan a valorar distintas condiciones.`,`Realizarse controles puede contribuir a identificar alteraciones en etapas tempranas. La interpretación debe estar a cargo de un médico.`,`Para realizar un hemograma se requiere una muestra de sangre y, según la información publicada por LABS, no es necesario estar en ayunas.`]},
+{slug:'los-examenes-de-laboratorio-son-necesarios-y-primordiales',title:'Los exámenes de laboratorio son necesarios y primordiales',date:'15 Dic',tag:'Labs · Salud',img:'assets/examen3.jpeg',intro:'Las pruebas de laboratorio aportan información para el diagnóstico, seguimiento y prevención.',enTitle:'Laboratory tests are necessary and essential',enTag:'Tests · LABS · Health',enIntro:'Laboratory tests are an important tool for prevention, diagnosis, monitoring, and treatment follow-up.',enBody:['Laboratory testing provides objective information that helps healthcare professionals evaluate a person’s health status.', 'Tests can support the detection of alterations before symptoms become evident and can also help monitor known conditions.', 'The appropriate test depends on the clinical situation, symptoms, age, medical history, and professional indication.', 'Correct preparation and professional interpretation are essential for meaningful results.'],body:[`Los exámenes de laboratorio se realizan a partir de muestras como sangre, orina y heces, y pueden ayudar a descubrir diversas afecciones.`,`Las pruebas diagnósticas son una herramienta de apoyo para las decisiones médicas y permiten evaluar diferentes aspectos fisiológicos y bioquímicos.`,`La variedad de exámenes disponibles permite personalizar el enfoque de atención y contribuir a la prevención y manejo de distintas afecciones.`]},
+{slug:'el-vih-y-el-sida-son-lo-mismo',title:'¿El VIH y el SIDA son lo mismo?',date:'01 Dic',tag:'Exámenes · Labs · Salud',img:'assets/sida.jpeg',intro:'VIH y SIDA están relacionados, pero no significan lo mismo.',enTitle:'Are HIV and AIDS the same?',enTag:'Health · LABS',enIntro:'HIV and AIDS are related concepts, but they are not the same.',enBody:['HIV is the human immunodeficiency virus. AIDS is the advanced stage of HIV infection when the immune system has been severely weakened.', 'An HIV diagnosis does not automatically mean that a person has AIDS. With appropriate treatment and medical follow-up, people living with HIV can maintain their health for many years.', 'Laboratory tests are essential for detection, monitoring, and medical follow-up.', 'If there is a possible exposure or concern, seek professional advice and use the appropriate testing and prevention measures.'],body:[`El VIH es el virus que causa la infección, mientras que el SIDA es un síndrome que puede aparecer en una etapa avanzada de la infección.`,`El virus puede transmitirse mediante determinados fluidos corporales y existen vías de transmisión sexual, sanguínea y vertical.`,`Los exámenes de laboratorio son importantes para detectar y hacer seguimiento de la infección y de la respuesta al tratamiento.`]}
 ];
-const examsSearch=exams.map((x, i)=>( {
-    ...x, id: i
-}));
-const state= {
-    selected: new Set()
-};
-const money=s=>Number(String(s).replace('$', '').replace(',', '.'));
-const fmt=n=>'$'+n.toFixed(2).replace('.', ',');
-function esc(s) {
-    return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot; ',"'":'&#039;'}[m]));}
+
+const examsSearch=exams.map((x,i)=>({...x,id:i}));
+const state={selected:new Set()};
+const money=s=>Number(String(s).replace('$','').replace(',','.'));
+const fmt=n=>'$'+n.toFixed(2).replace('.',',');
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
 const I18N={
  es:{
   topBrand:'HUMANLABS · MEDICINA DIAGNÓSTICA',navHome:'Inicio',navAbout:'Nosotros',navNotes:'Notas de salud',navContact:'Contacto',navQuote:'Cotizador de exámenes',login:'Login',
@@ -428,12 +52,8 @@ function toggleLanguage(){currentLang=currentLang==='es'?'en':'es';applyLanguage
 function initLanguage(){document.querySelectorAll('[data-lang-toggle]').forEach(b=>b.addEventListener('click',toggleLanguage));applyLanguage();}
 function initMenu(){const btn=document.getElementById('menuBtn'),nav=document.getElementById('nav');if(btn&&nav){btn.addEventListener('click',()=>{const open=nav.classList.toggle('open');btn.setAttribute('aria-expanded',open)});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.setAttribute('aria-expanded','false')}))}}
 function initCookie(){const c=document.getElementById('cookie');if(c&&!localStorage.getItem('labs-cookie'))c.classList.add('show');document.getElementById('acceptCookies')?.addEventListener('click',()=>{localStorage.setItem('labs-cookie','1');c?.classList.remove('show')})}
-function renderExamResults(q=''){const box=document.getElementById('examResults');if(!box)return;const term=q.trim().toLowerCase();const list=examsSearch.filter(x=>!term||x.name.toLowerCase().includes(term)).slice(0,80);box.innerHTML=list.map(x=>`<div class="examRow"><div><strong>${esc(x.name)}</strong><span>${x.price}</span></div><button type="button" class="btn smallBtn" data-add-exam="$ {
-        x.id
-    }" ${state.selected.has(x.id)?'disabled':''}>${state.selected.has(x.id)?t('added'):t('add')}</button></div>`).join('')||`<p class="emptyState">${t('noExams')}</p>`;box.querySelectorAll('[data-add-exam]').forEach(b=>b.addEventListener('click',()=>{state.selected.add(Number(b.dataset.addExam));renderExamResults(document.getElementById('examSearch')?.value||'');renderSelected()}))}
-function renderSelected(){const box=document.getElementById('selectedExams'),total=document.getElementById('quoteTotalInline'),count=document.getElementById('selectedCount');if(!box)return;const ids=[...state.selected],arr=ids.map(i=>exams[i]),sum=arr.reduce((a,x)=>a+money(x.price),0);if(total)total.textContent=fmt(sum);if(count)count.textContent=String(arr.length);box.innerHTML=arr.length?arr.map((x,i)=>`<div class="selectedRow"><div><strong>${esc(x.name)}</strong><span>${x.price}</span></div><button type="button" class="removeExam" data-remove="$ {
-        ids[i]
-    }">${t('remove')}</button></div>`).join(''):`<p class="emptyState">${t('emptySelected')}</p>`;box.querySelectorAll('[data-remove]').forEach(b=>b.addEventListener('click',()=>{state.selected.delete(Number(b.dataset.remove));renderExamResults(document.getElementById('examSearch')?.value||'');renderSelected()}))}
+function renderExamResults(q=''){const box=document.getElementById('examResults');if(!box)return;const term=q.trim().toLowerCase();const list=examsSearch.filter(x=>!term||x.name.toLowerCase().includes(term)).slice(0,80);box.innerHTML=list.map(x=>`<div class="examRow"><div><strong>${esc(x.name)}</strong><span>${x.price}</span></div><button type="button" class="btn smallBtn" data-add-exam="${x.id}" ${state.selected.has(x.id)?'disabled':''}>${state.selected.has(x.id)?t('added'):t('add')}</button></div>`).join('')||`<p class="emptyState">${t('noExams')}</p>`;box.querySelectorAll('[data-add-exam]').forEach(b=>b.addEventListener('click',()=>{state.selected.add(Number(b.dataset.addExam));renderExamResults(document.getElementById('examSearch')?.value||'');renderSelected()}))}
+function renderSelected(){const box=document.getElementById('selectedExams'),total=document.getElementById('quoteTotalInline'),count=document.getElementById('selectedCount');if(!box)return;const ids=[...state.selected],arr=ids.map(i=>exams[i]),sum=arr.reduce((a,x)=>a+money(x.price),0);if(total)total.textContent=fmt(sum);if(count)count.textContent=String(arr.length);box.innerHTML=arr.length?arr.map((x,i)=>`<div class="selectedRow"><div><strong>${esc(x.name)}</strong><span>${x.price}</span></div><button type="button" class="removeExam" data-remove="${ids[i]}">${t('remove')}</button></div>`).join(''):`<p class="emptyState">${t('emptySelected')}</p>`;box.querySelectorAll('[data-remove]').forEach(b=>b.addEventListener('click',()=>{state.selected.delete(Number(b.dataset.remove));renderExamResults(document.getElementById('examSearch')?.value||'');renderSelected()}))}
 function validForm(){const form=document.getElementById('quoteForm');if(!form)return false;const name=form.name.value.trim(),ced=form.cedula.value.trim(),email=form.email.value.trim(),phone=form.phone.value.trim();if(name.length<3){alert(t('alertName'));form.name.focus();return false}if(!/^\d{10}$/.test(ced)){alert(t('alertCedula'));form.cedula.focus();return false}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){alert(t('alertEmail'));form.email.focus();return false}if(!/^\d{7,15}$/.test(phone.replace(/\s|[-+()]/g,''))){alert(t('alertPhone'));form.phone.focus();return false}if(!state.selected.size){alert(t('alertExam'));return false}return true}
 function imageData(url){return new Promise(resolve=>{const img=new Image();img.crossOrigin='anonymous';img.onload=()=>{try{const c=document.createElement('canvas');c.width=img.naturalWidth;c.height=img.naturalHeight;c.getContext('2d').drawImage(img,0,0);resolve(c.toDataURL('image/jpeg',.9))}catch(e){resolve(null)}};img.onerror=()=>resolve(null);img.src=url})}
 async function generatePDF(){if(!validForm())return;if(!window.jspdf){alert(t('pdfLoad'));return}const {jsPDF}=window.jspdf,doc=new jsPDF();const green=[47,144,142],orange=[239,125,50],dark=[36,59,58];const data=new FormData(document.getElementById('quoteForm')),selected=[...state.selected].map(i=>exams[i]),total=selected.reduce((a,x)=>a+money(x.price),0),now=new Date(),date=now.toLocaleDateString(currentLang==='es'?'es-EC':'en-US'),code='LABS-'+now.getFullYear()+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0')+'-'+Math.floor(1000+Math.random()*9000);doc.setFillColor(...green);doc.rect(0,0,210,30,'F');const logo=await imageData((new URL('assets/labs.jpg', window.location.href)).href);if(logo){try{doc.addImage(logo,'JPEG',14,7,48,16)}catch(e){doc.setTextColor(255,255,255);doc.setFontSize(22);doc.setFont('helvetica','bold');doc.text('LABS',14,20)}}else{doc.setTextColor(255,255,255);doc.setFontSize(22);doc.setFont('helvetica','bold');doc.text('LABS',14,20)}doc.setTextColor(255,255,255);doc.setFontSize(8);doc.setFont('helvetica','normal');doc.text(currentLang==='es'?'MEDICINA DIAGNÓSTICA':'DIAGNOSTIC MEDICINE',14,26);doc.setFontSize(15);doc.setFont('helvetica','bold');doc.text(t('pdfTitle'),196,14,{align:'right'});doc.setFontSize(8);doc.setFont('helvetica','normal');doc.text(date+' · '+code,196,22,{align:'right'});let y=44;doc.setTextColor(...dark);doc.setFontSize(12);doc.setFont('helvetica','bold');doc.text(t('pdfClient'),14,y);y+=9;doc.setFontSize(9);doc.setFont('helvetica','normal');[[t('fullName'),data.get('name')],[t('idNumber'),data.get('cedula')],[t('email'),data.get('email')],[t('phone'),data.get('phone')]].forEach(([k,v])=>{doc.setFont('helvetica','bold');doc.text(k+':',14,y);doc.setFont('helvetica','normal');doc.text(String(v),58,y);y+=6});y+=5;doc.setFillColor(...green);doc.rect(14,y-5,182,9,'F');doc.setTextColor(255,255,255);doc.setFont('helvetica','bold');doc.text(t('pdfExam'),18,y+1);doc.text(t('pdfPrice'),192,y+1,{align:'right'});y+=12;doc.setTextColor(...dark);doc.setFont('helvetica','normal');selected.forEach((x,idx)=>{if(y>275){doc.addPage();y=20}if(idx%2===0){doc.setFillColor(245,249,248);doc.rect(14,y-5,182,9,'F')}doc.text(x.name,18,y+1);doc.text(x.price,192,y+1,{align:'right'});y+=9});y+=6;doc.setDrawColor(...orange);doc.line(120,y,196,y);y+=10;doc.setFont('helvetica','bold');doc.setFontSize(13);doc.setTextColor(...green);doc.text(t('pdfTotal'),145,y);doc.setTextColor(...dark);doc.text(fmt(total),192,y,{align:'right'});y+=18;doc.setFontSize(8);doc.setFont('helvetica','normal');doc.setTextColor(100,100,100);doc.text(t('pdfDisclaimer'),14,y);doc.text(t('pdfConfirm'),14,y+5);doc.text('HUMANLABS · '+(currentLang==='es'?'Medicina Diagnóstica':'Diagnostic Medicine')+' · (+593) 98 509 0215 · info@labs.ec',14,y+14);doc.save(code+'.pdf');const msg=document.getElementById('quoteMsg');if(msg)msg.textContent=t('pdfGenerated')}
@@ -451,13 +71,7 @@ function renderNotesList(q=''){
    const title=currentLang==='en'?(n.enTitle||n.title):n.title;
    const tag=currentLang==='en'?(n.enTag||n.tag):n.tag;
    const intro=currentLang==='en'?(n.enIntro||n.intro):n.intro;
-   return `<a class="noteCard" href="$ {
-        n.slug
-    }/"><img src="../$ {
-        n.img
-    }" alt="$ {
-        esc(title)
-    }"><div class="noteBody"><div class="date">${esc(n.date)} · ${esc(tag)}</div><h3>${esc(title)}</h3><p>${esc(intro)}</p></div></a>`;
+   return `<a class="noteCard" href="${n.slug}/"><img src="../${n.img}" alt="${esc(title)}"><div class="noteBody"><div class="date">${esc(n.date)} · ${esc(tag)}</div><h3>${esc(title)}</h3><p>${esc(intro)}</p></div></a>`;
  }).join('')||`<p class="emptyState">${t('noResults')}</p>`;
 }
 function initArticle(){
@@ -474,11 +88,7 @@ function initArticle(){
    if(i===2 && n.slug==='higado-el-filtro-natural-del-cuerpo') return '<h2>'+esc(currentLang==='en'?'Main liver functions':'Principales funciones del hígado')+'</h2><p>'+esc(p)+'</p>';
    return '<p>'+esc(p)+'</p>';
  }).join('');
- box.innerHTML=`<div class="articleMeta">${esc(n.date)} · ${esc(tag)} · LABS</div><h1>${esc(title)}</h1><p class="lead">${esc(intro)}</p><img class="articleImage" src="$ {
-        imgPath
-    }" alt="$ {
-        esc(title)
-    }"><div class="articleBody">${body}</div><p style="margin-top: 42px"><a class="btn secondary" href="../">← <span>${esc(t('backToNotes'))}</span></a></p>`;
+ box.innerHTML=`<div class="articleMeta">${esc(n.date)} · ${esc(tag)} · LABS</div><h1>${esc(title)}</h1><p class="lead">${esc(intro)}</p><img class="articleImage" src="${imgPath}" alt="${esc(title)}"><div class="articleBody">${body}</div><p style="margin-top:42px"><a class="btn secondary" href="../">← <span>${esc(t('backToNotes'))}</span></a></p>`;
 }
 function initHome(){const slides=[...document.querySelectorAll('.slide')],dots=[...document.querySelectorAll('.dots button')];if(slides.length){let idx=0;const go=i=>{idx=i;slides.forEach((s,j)=>s.classList.toggle('active',j===i));dots.forEach((d,j)=>d.classList.toggle('active',j===i))};dots.forEach(d=>d.addEventListener('click',()=>go(+d.dataset.i)));setInterval(()=>go((idx+1)%slides.length),6000)}}
 document.addEventListener('DOMContentLoaded',()=>{initMenu();initCookie();initLanguage();initQuote();initHome();initArticle()});
