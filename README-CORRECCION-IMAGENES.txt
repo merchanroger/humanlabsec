@@ -1,23 +1,21 @@
-CORRECCIÓN LABS — ARCHIVOS DE IMAGEN
+IMÁGENES Y LOGO (carpeta assets/)
 
-El código de este paquete ya está configurado para utilizar exactamente estos archivos dentro de /assets:
+Carrusel de Inicio: foto1.jpeg, foto2.jpeg, foto3.jpeg, foto4.jpeg
+Nosotros: principal.jpeg
+Logo: logo.jpeg (cabecera, footer y PDF)
 
-foto1.jpeg
-foto2.jpeg
-foto3.jpeg
-foto4.jpeg
-principal.jpeg
-estres2.jpeg
-higado.jpeg
-dengue.jpeg
-riños.jpeg
-examenes.jpeg
-examen2.jpeg
-estres1.jpeg
-hemograma.jpeg
-examen3.jpeg
-sida.jpeg
+Notas de salud:
+- El estrés: Un enemigo silencioso...            -> estres2.jpeg
+- Hígado, el «filtro» natural del cuerpo          -> higado.jpeg
+- 4 síntomas que debes saber sobre el dengue      -> dengue.jpeg
+- Riñones: los héroes ocultos de nuestro cuerpo   -> riños.jpeg
+- Perdiendo peso, ¿qué exámenes necesito?         -> examenes.jpeg
+- 7 exámenes básicos que debes realizarte         -> examen2.jpeg
+- ¿Cómo los exámenes revelan el impacto del estrés? -> estres1.jpeg
+- ¿Qué se puede ver en un hemograma?              -> hemograma.jpeg
+- Los exámenes de laboratorio son necesarios...   -> examan3.jpeg  (el archivo adjunto se llama "examan3", no "examen3"; no se renombró)
+- ¿El VIH y el SIDA son lo mismo?                 -> sida.jpeg
 
-IMPORTANTE: estos archivos fueron indicados por el usuario como existentes en su proyecto de Visual Studio, pero no fueron adjuntados/montados en esta sesión. No se generaron sustitutos ni se usaron imágenes de Internet.
+Inicio, segundo bloque: assets/labs-inicio-2.jpeg (foto de recepción)
 
-El archivo assets/labs.jpg existente se utiliza localmente para el logo del PDF, evitando la dependencia del logo remoto de labs.ec.
+Pendiente: foto5.jpeg no se usa en ninguna parte.
