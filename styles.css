@@ -5,10 +5,10 @@
 .locationTop{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.principalBadge{display:inline-flex;align-items:center;padding:4px 9px;border:1px solid var(--green);color:var(--green);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;border-radius:20px}.location.principal{border:2px solid var(--green);box-shadow:0 8px 24px rgba(47,144,142,.10)}.location.principal strong{color:var(--green)}.location p{margin-bottom:8px}.emptyState{padding:18px;color:var(--muted);font-size:14px}.quoteSection{background:var(--soft)}.quoteCatalog,.quoteSummary{box-shadow:0 8px 24px rgba(30,70,68,.06)}@media(max-width:850px){.nav .active:after{bottom:8px}.nav .langToggle{width:100%;border:0;border-top:1px solid var(--line);border-radius:0}.topbar{display:none}}@media(max-width:500px){.wrap{width:min(100% - 28px,1160px)}.quoteLayout{width:100%}.quoteCatalog,.quoteSummary{min-width:0}.searchBox{flex-wrap:wrap}.searchBox input{min-width:0}.searchBox .btn{flex:0 0 auto}.locationTop{align-items:flex-start}.principalBadge{margin-left:0}}
 
 /* Logo oficial (assets/logo.jpeg) */
-.brandLogo{height:52px;width:auto;display:block}
-.footerLogo{height:48px;background:#fff;padding:6px 12px;border-radius:4px}
-@media(max-width:850px){.brandLogo{height:44px}}
-@media(max-width:500px){.brandLogo{height:38px}.footerLogo{height:42px}}
+.brandLogo{height:46px;width:auto;display:block}
+.footerLogo{height:46px}
+@media(max-width:850px){.brandLogo{height:40px}}
+@media(max-width:500px){.brandLogo{height:36px}.footerLogo{height:40px}}
 /* Valores monetarios del cotizador en el gris existente (--muted) */
 .examRow .price,.selectedRow .price,.summaryTotal strong.price,.price{color:var(--muted)}
 /* Artículos completos: elementos adicionales (autor, subtítulos, figuras, citas) */
@@ -19,3 +19,14 @@
 .articleBody figure img{width:100%;max-height:480px;object-fit:cover}
 .articleBody figcaption{font-size:13px;color:var(--muted);margin-top:8px}
 .articleBody blockquote{margin:26px 0;padding:6px 0 6px 20px;border-left:3px solid var(--green);color:#2c3f3e}
+
+/* Inicio en móvil: la foto se ve completa arriba y el texto va debajo, sin tapar a las personas */
+@media(max-width:700px){
+.hero{--band:clamp(280px,62vw,420px);height:calc(var(--band) + 385px);min-height:0}
+.slide{background-repeat:no-repeat;background-color:#0f2d2c;background-size:max(100%,calc(var(--band)*1.4988)) auto;background-position:var(--px,50%) 0}
+.slide:after{inset:var(--band) 0 0 0;background:#0f2d2c}
+.heroCopy{top:calc(var(--band) + 22px);bottom:auto;left:22px;right:22px}
+.heroCopy h1{font-size:28px;line-height:1.1;margin:10px 0}
+.heroCopy p{font-size:14px;line-height:1.55;margin:0 0 20px}
+.dots{bottom:16px}
+}

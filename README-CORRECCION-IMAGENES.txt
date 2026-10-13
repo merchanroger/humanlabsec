@@ -2,7 +2,7 @@ IMÁGENES Y LOGO (carpeta assets/)
 
 Carrusel de Inicio: foto1.jpeg, foto2.jpeg, foto3.jpeg, foto4.jpeg
 Nosotros: principal.jpeg
-Logo: logo.jpeg (cabecera, footer y PDF)
+Logo: logo.png (cabecera) y logo-blanco.png (footer y PDF)
 
 Notas de salud:
 - El estrés: Un enemigo silencioso...            -> estres2.jpeg

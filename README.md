@@ -18,7 +18,7 @@ La carpeta raíz contiene directamente `index.html`, por lo que puede subirse al
 
 ## Actualización (imágenes, logo, traducción y notas)
 
-- Logo oficial: `assets/logo.jpeg` en cabecera, footer (sobre fondo blanco) y PDF del cotizador.
+- Logo oficial en PNG transparente: `assets/logo.png` (cabecera) y `assets/logo-blanco.png` (footer y PDF, sobre fondo verde).
 - Carrusel de Inicio: `foto1` a `foto4`. Nosotros: `principal.jpeg`.
 - Imágenes de las notas: ver `README-CORRECCION-IMAGENES.txt`.
 - Valores monetarios del cotizador en gris (`--muted`, clase `.price`).
