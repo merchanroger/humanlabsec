@@ -56,3 +56,13 @@
 @media(max-width:850px){.topbar .wrap{grid-template-columns:1fr auto;gap:10px 18px}.topbar .topBrand{grid-column:1/-1;text-align:center}.topbar .topContact{justify-content:flex-start}.topbar .topSocial{justify-content:flex-end}}
 @media(max-width:500px){.topbar{font-size:11px}.topbar .wrap{width:calc(100% - 24px);grid-template-columns:1fr;justify-items:center;gap:8px}.topbar .topBrand{grid-column:auto;font-size:10px}.topbar .topContact{flex-wrap:wrap;justify-content:center;gap:6px}.topbar .topSocial{justify-content:center;gap:18px}.topSocial a{width:22px;height:22px}.topSocial svg{width:19px;height:19px}.footer{padding-top:42px}.footerGrid{gap:24px}.footer h4{margin-bottom:12px}.whatsapp{right:14px;bottom:14px;width:54px;height:54px}.waTooltip{right:62px;max-width:calc(100vw - 100px)}}
 @media(prefers-reduced-motion:reduce){.whatsapp,.topSocial a{animation:none;transition:none}.whatsapp:hover{transform:none}}
+
+/* Correcciones puntuales de Contacto: botones de mapa y formulario de consulta */
+.locationMapBtn{min-height:34px;padding:0 12px;margin-top:5px;font-size:12px;border-color:var(--line);width:max-content;max-width:100%}
+.contactForm{margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.contactForm label{display:block;margin-top:12px;font-size:12px;font-weight:700;color:#333}
+.contactForm input,.contactForm textarea{display:block;width:100%;margin-top:5px;padding:11px;border:1px solid var(--line);border-radius:2px;font:inherit;font-size:14px;color:#222;background:#fff}
+.contactForm textarea{resize:vertical;min-height:96px}
+.contactSubmit{margin-top:14px;min-height:40px;padding:0 16px;border-color:var(--line);font-size:12px}
+.contactFormNote,.contactFormMsg{font-size:12px;line-height:1.5;color:var(--muted)}
+.contactFormMsg{font-weight:700}
