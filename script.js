@@ -97,7 +97,142 @@ function validForm(){
   return true
 }
 function imageData(url){return new Promise(resolve=>{const img=new Image();img.crossOrigin='anonymous';img.onload=()=>{try{const c=document.createElement('canvas');c.width=img.naturalWidth;c.height=img.naturalHeight;c.getContext('2d').drawImage(img,0,0);resolve(c.toDataURL('image/png'))}catch(e){resolve(null)}};img.onerror=()=>resolve(null);img.src=url})}
-async function generatePDF(){if(!validForm())return;if(!window.jspdf){alert(t('pdfLoad'));return}const {jsPDF}=window.jspdf,doc=new jsPDF();const green=[26,188,156],orange=[255,108,14],headerBg=[60,69,72],dark=[36,59,58];const data=new FormData(document.getElementById('quoteForm')),selected=[...state.selected].map(i=>exams[i]),total=selected.reduce((a,x)=>a+money(x.price),0),now=new Date(),date=now.toLocaleDateString(currentLang==='es'?'es-EC':'en-US'),code='LABS-'+now.getFullYear()+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0')+'-'+Math.floor(1000+Math.random()*9000);doc.setFillColor(...headerBg);doc.rect(0,0,210,30,'F');const logoEl=document.querySelector('.footerLogo')||document.querySelector('.brandLogo');const logo=logoEl?await imageData(logoEl.src):null;doc.setFillColor(...orange);doc.rect(0,30,210,1.6,'F');if(logo){try{doc.addImage(logo,'PNG',14,6,40.5,18)}catch(e){doc.setTextColor(255,255,255);doc.setFontSize(22);doc.setFont('helvetica','bold');doc.text('LABS',14,20)}}else{doc.setTextColor(255,255,255);doc.setFontSize(22);doc.setFont('helvetica','bold');doc.text('LABS',14,20)}doc.setTextColor(255,255,255);doc.setFontSize(15);doc.setFont('helvetica','bold');doc.text(t('pdfTitle'),196,14,{align:'right'});doc.setFontSize(8);doc.setFont('helvetica','normal');doc.text(date+' · '+code,196,22,{align:'right'});let y=44;doc.setTextColor(...dark);doc.setFontSize(12);doc.setFont('helvetica','bold');doc.text(t('pdfClient'),14,y);y+=9;doc.setFontSize(9);doc.setFont('helvetica','normal');[[t('fullName'),data.get('name')],[t('idNumber'),data.get('cedula')],[t('email'),data.get('email')],[t('phone'),data.get('phone')]].forEach(([k,v])=>{doc.setFont('helvetica','bold');doc.text(k+':',14,y);doc.setFont('helvetica','normal');doc.text(String(v),58,y);y+=6});y+=5;doc.setFillColor(...green);doc.rect(14,y-5,182,9,'F');doc.setTextColor(255,255,255);doc.setFont('helvetica','bold');doc.text(t('pdfExam'),18,y+1);doc.text(t('pdfPrice'),192,y+1,{align:'right'});y+=12;doc.setTextColor(...dark);doc.setFont('helvetica','normal');selected.forEach((x,idx)=>{if(y>275){doc.addPage();y=20}if(idx%2===0){doc.setFillColor(245,249,248);doc.rect(14,y-5,182,9,'F')}doc.text(examName(x),18,y+1);doc.text(priceText(x),192,y+1,{align:'right'});y+=9});y+=6;doc.setDrawColor(...orange);doc.line(120,y,196,y);y+=10;doc.setFont('helvetica','bold');doc.setFontSize(13);doc.setTextColor(...orange);doc.text(t('pdfTotal'),145,y);doc.setTextColor(...dark);doc.text(fmt(total),192,y,{align:'right'});y+=18;doc.setFontSize(8);doc.setFont('helvetica','normal');doc.setTextColor(100,100,100);doc.text(t('pdfDisclaimer'),14,y);doc.text(t('pdfConfirm'),14,y+5);doc.text('HUMANLABS · '+(currentLang==='es'?'Medicina Diagnóstica':'Diagnostic Medicine')+' · (+593) 98 509 0215 · info@labs.ec',14,y+14);doc.save(code+'.pdf');const msg=document.getElementById('quoteMsg');if(msg)msg.textContent=t('pdfGenerated')}
+async function generatePDF() {
+  if (!validForm()) return;
+
+  if (!window.jspdf) {
+    alert(t('pdfLoad'));
+    return;
+  }
+
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  const green = [0, 161, 155];
+  const orange = [255, 108, 14];
+  const headerBg = [60, 69, 72];
+  const dark = [36, 59, 58];
+  const data = new FormData(document.getElementById('quoteForm'));
+  const selected = [...state.selected].map(i => exams[i]);
+  const total = selected.reduce((sum, exam) => sum + money(exam.price), 0);
+  const now = new Date();
+  const date = now.toLocaleDateString(currentLang === 'es' ? 'es-EC' : 'en-US');
+  const code = 'LABS-' + now.getFullYear()
+    + String(now.getMonth() + 1).padStart(2, '0')
+    + String(now.getDate()).padStart(2, '0')
+    + '-' + Math.floor(1000 + Math.random() * 9000);
+
+  doc.setFillColor(...headerBg);
+  doc.rect(0, 0, 210, 30, 'F');
+
+  const logoEl = document.querySelector('.footerLogo')
+    || document.querySelector('.brandLogo');
+  const logo = logoEl ? await imageData(logoEl.src) : null;
+
+  doc.setFillColor(...orange);
+  doc.rect(0, 30, 210, 1.6, 'F');
+
+  if (logo) {
+    try {
+      doc.addImage(logo, 'PNG', 14, 6, 40.5, 18);
+    } catch (error) {
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(22);
+      doc.setFont('helvetica', 'bold');
+      doc.text('LABS', 14, 20);
+    }
+  } else {
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(22);
+    doc.setFont('helvetica', 'bold');
+    doc.text('LABS', 14, 20);
+  }
+
+  doc.setTextColor(255, 255, 255);
+  doc.setFontSize(15);
+  doc.setFont('helvetica', 'bold');
+  doc.text(t('pdfTitle'), 196, 14, { align: 'right' });
+  doc.setFontSize(8);
+  doc.setFont('helvetica', 'normal');
+  doc.text(date + ' · ' + code, 196, 22, { align: 'right' });
+
+  let y = 44;
+  doc.setTextColor(...dark);
+  doc.setFontSize(12);
+  doc.setFont('helvetica', 'bold');
+  doc.text(t('pdfClient'), 14, y);
+  y += 9;
+  doc.setFontSize(9);
+  doc.setFont('helvetica', 'normal');
+
+  [
+    [t('fullName'), data.get('name')],
+    [t('idNumber'), data.get('cedula')],
+    [t('email'), data.get('email')],
+    [t('phone'), data.get('phone')]
+  ].forEach(([label, value]) => {
+    doc.setFont('helvetica', 'bold');
+    doc.text(label + ':', 14, y);
+    doc.setFont('helvetica', 'normal');
+    doc.text(String(value), 58, y);
+    y += 6;
+  });
+
+  y += 5;
+  doc.setFillColor(...green);
+  doc.rect(14, y - 5, 182, 9, 'F');
+  doc.setTextColor(255, 255, 255);
+  doc.setFont('helvetica', 'bold');
+  doc.text(t('pdfExam'), 18, y + 1);
+  doc.text(t('pdfPrice'), 192, y + 1, { align: 'right' });
+  y += 12;
+
+  doc.setTextColor(...dark);
+  doc.setFont('helvetica', 'normal');
+  selected.forEach((exam, index) => {
+    if (y > 275) {
+      doc.addPage();
+      y = 20;
+    }
+
+    if (index % 2 === 0) {
+      doc.setFillColor(245, 249, 248);
+      doc.rect(14, y - 5, 182, 9, 'F');
+    }
+
+    doc.text(examName(exam), 18, y + 1);
+    doc.text(priceText(exam), 192, y + 1, { align: 'right' });
+    y += 9;
+  });
+
+  y += 6;
+  doc.setDrawColor(...orange);
+  doc.line(120, y, 196, y);
+  y += 10;
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(13);
+  doc.setTextColor(...orange);
+  doc.text(t('pdfTotal'), 145, y);
+  doc.setTextColor(...dark);
+  doc.text(fmt(total), 192, y, { align: 'right' });
+  y += 18;
+
+  doc.setFontSize(8);
+  doc.setFont('helvetica', 'normal');
+  doc.setTextColor(100, 100, 100);
+  doc.text(t('pdfDisclaimer'), 14, y);
+  doc.text(t('pdfConfirm'), 14, y + 5);
+  doc.text(
+    'HUMANLABS · '
+      + (currentLang === 'es' ? 'Medicina Diagnóstica' : 'Diagnostic Medicine')
+      + ' · (+593) 98 509 0215 · info@labs.ec',
+    14,
+    y + 14
+  );
+
+  doc.save(code + '.pdf');
+  const message = document.getElementById('quoteMsg');
+  if (message) message.textContent = t('pdfGenerated');
+}
 function initQuote(){const search=document.getElementById('examSearch');if(!search)return;renderExamResults();renderSelected();search.addEventListener('input',()=>renderExamResults(search.value));document.getElementById('clearSearch')?.addEventListener('click',()=>{search.value='';renderExamResults()});const cedula=document.querySelector('#quoteForm [name=cedula]');cedula?.addEventListener('input',()=>{const clean=cedula.value.replace(/[^0-9]/g,'').slice(0,10);if(cedula.value!==clean)cedula.value=clean});const phone=document.querySelector('#quoteForm [name=phone]');phone?.addEventListener('input',()=>{const clean=phone.value.replace(/[^0-9]/g,'').slice(0,10);if(phone.value!==clean)phone.value=clean});document.getElementById('quoteForm')?.addEventListener('submit',e=>{e.preventDefault();generatePDF()})}
 const noteDate=n=>currentLang==='en'?(n.enDate||n.date):n.date;
 const rich=x=>esc(x).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
