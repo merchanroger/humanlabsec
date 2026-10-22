@@ -3502,33 +3502,69 @@ async function generatePDF() {
     y += 6;
   });
 
-  y += 5;
-  doc.setFillColor(...green);
-  doc.rect(14, y - 5, 182, 9, 'F');
-  doc.setTextColor(255, 255, 255);
-  doc.setFont('helvetica', 'bold');
-  doc.text(t('pdfExam'), 18, y + 1);
-  doc.text(t('pdfPrice'), 192, y + 1, { align: 'right' });
-  y += 12;
+  // Márgenes de seguridad: ningún examen ni el resumen puede salir de la hoja A4.
+  const pageHeight = doc.internal.pageSize.getHeight();
+  const bottomLimit = pageHeight - 16;
+  const tableLeft = 14;
+  const tableWidth = 182;
+  const examTextWidth = 144; // Reserva espacio para la columna PRECIO.
 
-  doc.setTextColor(...dark);
-  doc.setFont('helvetica', 'normal');
-  selected.forEach((exam, index) => {
-    if (y > 275) {
-      doc.addPage();
-      y = 20;
+  // Repetimos los títulos al continuar la cotización en otra página.
+  function drawTableHeading(continuation = false) {
+    doc.setFillColor(...green);
+    doc.rect(tableLeft, y - 5, tableWidth, 9, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(9);
+    doc.text(t('pdfExam'), 18, y + 1);
+    doc.text(t('pdfPrice'), 192, y + 1, { align: 'right' });
+    y += 12;
+    doc.setTextColor(...dark);
+    doc.setFont('helvetica', 'normal');
+    if (continuation) {
+      // El encabezado se muestra en todas las páginas, sin repetir al paciente.
+      doc.setFontSize(9);
     }
+  }
+
+  function newTablePage() {
+    doc.addPage();
+    y = 21;
+    drawTableHeading(true);
+  }
+
+  // Si no cabe un bloque completo, pasamos a la siguiente hoja ANTES de dibujarlo.
+  function ensureRoom(height) {
+    if (y + height > bottomLimit) newTablePage();
+  }
+
+  y += 5;
+  drawTableHeading();
+
+  // Cada fila puede crecer cuando el examen tiene un nombre largo.
+  // No dejamos que se monte sobre el precio ni que se corte entre dos páginas.
+  selected.forEach((exam, index) => {
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(9);
+    const lines = doc.splitTextToSize(examName(exam), examTextWidth);
+    const rowHeight = Math.max(9, lines.length * 4.5 + 4.5);
+    ensureRoom(rowHeight);
 
     if (index % 2 === 0) {
       doc.setFillColor(245, 249, 248);
-      doc.rect(14, y - 5, 182, 9, 'F');
+      doc.rect(tableLeft, y - 5, tableWidth, rowHeight, 'F');
     }
 
-    doc.text(examName(exam), 18, y + 1);
+    doc.setTextColor(...dark);
+    doc.text(lines, 18, y + 1);
     doc.text(priceText(exam), 192, y + 1, { align: 'right' });
-    y += 9;
+    y += rowHeight;
   });
 
+  // Total, aclaraciones y contacto forman un único bloque indivisible.
+  // Con muchos exámenes, este resumen se traslada íntegramente a la siguiente hoja.
+  const summaryHeight = 55;
+  ensureRoom(summaryHeight);
   y += 6;
   doc.setDrawColor(...orange);
   doc.line(120, y, 196, y);
@@ -3539,7 +3575,7 @@ async function generatePDF() {
   doc.text(t('pdfTotal'), 145, y);
   doc.setTextColor(...dark);
   doc.text(fmt(total), 192, y, { align: 'right' });
-  y += 18;
+  y += 17;
 
   doc.setFontSize(8);
   doc.setFont('helvetica', 'normal');
@@ -3553,6 +3589,16 @@ async function generatePDF() {
     14,
     y + 14
   );
+
+  // Numeración discreta para que el paciente pueda ordenar sus hojas.
+  const pageCount = doc.internal.getNumberOfPages();
+  for (let page = 1; page <= pageCount; page++) {
+    doc.setPage(page);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8);
+    doc.setTextColor(125, 125, 125);
+    doc.text(`${page} / ${pageCount}`, 196, pageHeight - 9, { align: 'right' });
+  }
 
   doc.save(code + '.pdf');
   const message = document.getElementById('quoteMsg');

@@ -66,3 +66,19 @@ No hay backend de usuarios ni panel administrativo operativo: `login/` es una in
 - Revisa `REVISION-TARIFARIO.md` para los nombres duplicados que requieren validación comercial.
 - Se comprobaron archivos y referencias de manera estática. No se ha probado en navegadores reales, servidores externos ni con la dirección pública de GitHub Pages.
 - Se conservó el logo PNG original; no se engrosaron los trazos de la marca para evitar alterar su identidad sin un archivo vectorial oficial.
+
+## Corrección de paginación PDF (22 de octubre de 2026)
+
+En `script.js`, dentro de `generatePDF()`, el PDF ahora calcula cuánto espacio queda en cada hoja A4 antes de imprimir una fila o el resumen final:
+
+- `drawTableHeading()`: dibuja EXAMEN / PRECIO; se repite cuando hay una página nueva.
+- `newTablePage()`: añade otra hoja y prepara la tabla para continuar.
+- `ensureRoom(height)`: revisa si cabe un elemento completo; en caso contrario salta de página.
+- `examTextWidth` y `splitTextToSize()`: ajustan los nombres largos para que no invadan la columna PRECIO.
+- `rowHeight`: calcula la altura necesaria para cada examen sin superponer filas.
+- `summaryHeight`: reserva espacio para TOTAL, aclaraciones y contacto en una misma página.
+- Bucle `pageCount`: numera las hojas al finalizar la cotización.
+
+**Archivo modificado:** solamente `script.js` y esta guía. No se cambió el tarifario, los precios ni el diseño de la web.
+
+**Comprobación:** `node --check script.js` y pruebas de simulación del generador con 1, 15, 21, 42, 100 y 731 exámenes, verificando que el total se imprima una sola vez, dentro del área de página. Estas pruebas no reemplazan una revisión visual del PDF en un navegador real.
