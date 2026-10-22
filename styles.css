@@ -1350,3 +1350,46 @@ img {
         gap:12px
     }
 }
+
+
+/* Ajustes puntuales de legibilidad del encabezado LABS. */
+.topbar {
+    padding: 10px 0;
+    font-size: 12.5px;
+}
+.topbar .wrap {
+    align-items: center;
+}
+.navwrap {
+    height: 92px;
+    gap: 32px;
+}
+.brandLogo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+@media (max-width: 850px) {
+    .navwrap {
+        height: 82px;
+    }
+    .brandLogo {
+        height: 43px;
+    }
+    .topbar {
+        padding: 9px 0;
+    }
+}
+@media (max-width: 500px) {
+    .navwrap {
+        height: 74px;
+        gap: 14px;
+    }
+    .brandLogo {
+        height: 38px;
+        max-width: min(58vw, 210px);
+    }
+    .topbar {
+        font-size: 11px;
+    }
+}

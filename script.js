@@ -577,14 +577,73 @@ function toggleLanguage(){currentLang=currentLang==='es'?'en':'es';applyLanguage
 function initLanguage(){document.querySelectorAll('[data-lang-toggle]').forEach(b=>b.addEventListener('click',toggleLanguage));applyLanguage();}
 function initMenu(){const btn=document.getElementById('menuBtn'),nav=document.getElementById('nav');if(btn&&nav){btn.addEventListener('click',()=>{const open=nav.classList.toggle('open');btn.setAttribute('aria-expanded',open)});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.setAttribute('aria-expanded','false')}))}}
 function initCookie(){const c=document.getElementById('cookie');if(c&&!localStorage.getItem('labs-cookie'))c.classList.add('show');document.getElementById('acceptCookies')?.addEventListener('click',()=>{localStorage.setItem('labs-cookie','1');c?.classList.remove('show')})}
-function renderExamResults(q=''){const box=document.getElementById('examResults');if(!box)return;const term=q.trim().toLowerCase();const list=examsSearch.filter(x=>!term||(x.name+' '+(x.en||'')).toLowerCase().includes(term)).slice(0,80);box.innerHTML=list.map(x=>`<div class="examRow"><div><strong>${esc(examName(x))}</strong><span class="price">${priceText(x)}</span></div><button type="button" class="btn smallBtn" data-add-exam="$ {
-        x.id
-    }
-    " ${state.selected.has(x.id)?'disabled':''}>${state.selected.has(x.id)?t('added'):t('add')}</button></div>`).join('')||`<p class="emptyState">${t('noExams')}</p>`;box.querySelectorAll('[data-add-exam]').forEach(b=>b.addEventListener('click',()=>{state.selected.add(Number(b.dataset.addExam));renderExamResults(document.getElementById('examSearch')?.value||'');renderSelected()}))}
-function renderSelected(){const box=document.getElementById('selectedExams'),total=document.getElementById('quoteTotalInline'),count=document.getElementById('selectedCount');if(!box)return;const ids=[...state.selected],arr=ids.map(i=>exams[i]),sum=arr.reduce((a,x)=>a+money(x.price),0);if(total)total.textContent=fmt(sum);if(count)count.textContent=String(arr.length);box.innerHTML=arr.length?arr.map((x,i)=>`<div class="selectedRow"><div><strong>${esc(examName(x))}</strong><span class="price">${priceText(x)}</span></div><button type="button" class="removeExam" data-remove="$ {
-        ids[i]
-    }
-    ">${t('remove')}</button></div>`).join(''):`<p class="emptyState">${t('emptySelected')}</p>`;box.querySelectorAll('[data-remove]').forEach(b=>b.addEventListener('click',()=>{state.selected.delete(Number(b.dataset.remove));renderExamResults(document.getElementById('examSearch')?.value||'');renderSelected()}))}
+function renderExamResults(q = '') {
+  const box = document.getElementById('examResults');
+  if (!box) return;
+
+  const term = q.trim().toLowerCase();
+  const list = examsSearch
+    .filter(exam => !term || (exam.name + ' ' + (exam.en || '')).toLowerCase().includes(term))
+    .slice(0, 80);
+
+  box.innerHTML = list.map(exam => `
+    <div class="examRow">
+      <div>
+        <strong>${esc(examName(exam))}</strong>
+        <span class="price">${priceText(exam)}</span>
+      </div>
+      <button
+        type="button"
+        class="btn smallBtn"
+        data-add-exam="${exam.id}"
+        ${state.selected.has(exam.id) ? 'disabled' : ''}
+      >${state.selected.has(exam.id) ? t('added') : t('add')}</button>
+    </div>
+  `).join('') || `<p class="emptyState">${t('noExams')}</p>`;
+
+  box.querySelectorAll('[data-add-exam]').forEach(button => {
+    button.addEventListener('click', () => {
+      state.selected.add(Number(button.dataset.addExam));
+      renderExamResults(document.getElementById('examSearch')?.value || '');
+      renderSelected();
+    });
+  });
+}
+
+function renderSelected() {
+  const box = document.getElementById('selectedExams');
+  const total = document.getElementById('quoteTotalInline');
+  const count = document.getElementById('selectedCount');
+  if (!box) return;
+
+  const ids = [...state.selected];
+  const selectedExams = ids.map(id => exams[id]);
+  const sum = selectedExams.reduce((amount, exam) => amount + money(exam.price), 0);
+
+  if (total) total.textContent = fmt(sum);
+  if (count) count.textContent = String(selectedExams.length);
+
+  box.innerHTML = selectedExams.length
+    ? selectedExams.map((exam, index) => `
+      <div class="selectedRow">
+        <div>
+          <strong>${esc(examName(exam))}</strong>
+          <span class="price">${priceText(exam)}</span>
+        </div>
+        <button type="button" class="removeExam" data-remove="${ids[index]}">${t('remove')}</button>
+      </div>
+    `).join('')
+    : `<p class="emptyState">${t('emptySelected')}</p>`;
+
+  box.querySelectorAll('[data-remove]').forEach(button => {
+    button.addEventListener('click', () => {
+      state.selected.delete(Number(button.dataset.remove));
+      renderExamResults(document.getElementById('examSearch')?.value || '');
+      renderSelected();
+    });
+  });
+}
+
 function isValidEcuadorianCedula(value){
   if(!/^\d{10}$/.test(value))return false;
   const province=Number(value.slice(0,2)),third=Number(value[2]);
@@ -764,53 +823,75 @@ function renderBlocks(arr){return (arr||[]).map(b=>{
  if(b.quote)return '<blockquote>'+rich(b.quote)+'</blockquote>';
  if(b.img)return '<figure><img src="../../'+esc(b.img)+'" alt="'+esc(b.alt||'')+'">'+(b.caption?'<figcaption>'+esc(b.caption)+'</figcaption>':'')+'</figure>';
  return '';}).join('')}
-function renderNotesList(q=''){
- const box=document.getElementById('notes'); if(!box)return;
- const term=q.trim().toLowerCase();
- const list=notes.filter(n=>{
-   const title=currentLang==='en'?(n.enTitle||n.title):n.title;
-   const tag=currentLang==='en'?(n.enTag||n.tag):n.tag;
-   const intro=currentLang==='en'?(n.enIntro||n.intro):n.intro;
-   return (title+' '+tag+' '+intro).toLowerCase().includes(term);
- });
- box.innerHTML=list.map(n=>{
-   const title=currentLang==='en'?(n.enTitle||n.title):n.title;
-   const tag=currentLang==='en'?(n.enTag||n.tag):n.tag;
-   const intro=currentLang==='en'?(n.enIntro||n.intro):n.intro;
-   return `<a class="noteCard" href="$ {
-        n.slug
-    }
-    /"><img src="../$ {
-        n.img
-    }
-    " alt="$ {
-        esc(title)
-    }
-    "><div class="noteBody"><div class="date">${esc(noteDate(n))} · ${esc(tag)}</div><h3>${esc(title)}</h3><p>${esc(intro)}</p></div></a>`;
- }).join('')||`<p class="emptyState">${t('noResults')}</p>`;
+function renderNotesList(q = '') {
+  const box = document.getElementById('notes');
+  if (!box) return;
+
+  const term = q.trim().toLowerCase();
+  const list = notes.filter(note => {
+    const title = currentLang === 'en' ? (note.enTitle || note.title) : note.title;
+    const tag = currentLang === 'en' ? (note.enTag || note.tag) : note.tag;
+    const intro = currentLang === 'en' ? (note.enIntro || note.intro) : note.intro;
+    return (title + ' ' + tag + ' ' + intro).toLowerCase().includes(term);
+  });
+
+  box.innerHTML = list.map(note => {
+    const title = currentLang === 'en' ? (note.enTitle || note.title) : note.title;
+    const tag = currentLang === 'en' ? (note.enTag || note.tag) : note.tag;
+    const intro = currentLang === 'en' ? (note.enIntro || note.intro) : note.intro;
+    return `
+      <a class="noteCard" href="${note.slug}/">
+        <img src="../${esc(note.img)}" alt="${esc(title)}">
+        <div class="noteBody">
+          <div class="date">${esc(noteDate(note))} · ${esc(tag)}</div>
+          <h3>${esc(title)}</h3>
+          <p>${esc(intro)}</p>
+        </div>
+      </a>
+    `;
+  }).join('') || `<p class="emptyState">${t('noResults')}</p>`;
 }
-function initArticle(){
- const box=document.getElementById('article'); if(!box)return;
- const path=window.location.pathname.replace(/\\/g,'/').replace(/\/$/,'');
- const slug=path.split('/').pop(); const n=notes.find(x=>x.slug===slug);
- if(!n){box.innerHTML='<p class="emptyState">'+esc(t('articleNotFound'))+'</p>';return;}
- const title=currentLang==='en'?(n.enTitle||n.title):n.title;
- const tag=currentLang==='en'?(n.enTag||n.tag):n.tag;
- const intro=currentLang==='en'?(n.enIntro||n.intro):n.intro;
- const paragraphs=currentLang==='en'?(n.enBody||n.body):n.body;
- const imgPath='../../'+n.img;
- const body=renderBlocks(paragraphs);
- document.title=title+' | LABS';
- box.innerHTML=`<div class="articleMeta">${esc(noteDate(n))} · ${esc(tag)} · LABS</div><h1>${esc(title)}</h1>${n.author?'<div class="articleAuthor">'+esc(t('byLabel'))+' '+esc(n.author)+'</div>':''}<p class="lead">${esc(intro)}</p><img class="articleImage" src="$ {
-        imgPath
-    }
-    " alt="$ {
-        esc(title)
-    }
-    "><div class="articleBody">${body}</div><p style="margin-top:42px"><a class="btn secondary" href="../">← <span>${esc(t('backToNotes'))}</span></a></p>`;
+
+function initArticle() {
+  const box = document.getElementById('article');
+  if (!box) return;
+
+  const path = window.location.pathname.replace(/\\/g, '/').replace(/\/$/, '');
+  const slug = path.split('/').pop();
+  const note = notes.find(item => item.slug === slug);
+  if (!note) {
+    box.innerHTML = `<p class="emptyState">${esc(t('articleNotFound'))}</p>`;
+    return;
+  }
+
+  const title = currentLang === 'en' ? (note.enTitle || note.title) : note.title;
+  const tag = currentLang === 'en' ? (note.enTag || note.tag) : note.tag;
+  const intro = currentLang === 'en' ? (note.enIntro || note.intro) : note.intro;
+  const paragraphs = currentLang === 'en' ? (note.enBody || note.body) : note.body;
+  const imagePath = '../../' + note.img;
+  const body = renderBlocks(paragraphs);
+
+  document.title = title + ' | LABS';
+  box.innerHTML = `
+    <div class="articleMeta">${esc(noteDate(note))} · ${esc(tag)} · LABS</div>
+    <h1>${esc(title)}</h1>
+    ${note.author ? `<div class="articleAuthor">${esc(t('byLabel'))} ${esc(note.author)}</div>` : ''}
+    <p class="lead">${esc(intro)}</p>
+    <img class="articleImage" src="${esc(imagePath)}" alt="${esc(title)}">
+    <div class="articleBody">${body}</div>
+    <p style="margin-top:42px"><a class="btn secondary" href="../">← <span>${esc(t('backToNotes'))}</span></a></p>
+  `;
 }
+
 function initContactForm(){const form=document.getElementById('contactForm');if(!form)return;const cedula=form.elements.contactCedula;cedula?.addEventListener('input',()=>{const clean=cedula.value.replace(/[^0-9]/g,'').slice(0,10);if(cedula.value!==clean)cedula.value=clean});const phoneField=form.elements.contactPhone;phoneField?.addEventListener('input',()=>{const clean=phoneField.value.replace(/[^0-9]/g,'').slice(0,10);if(phoneField.value!==clean)phoneField.value=clean});form.addEventListener('submit',e=>{e.preventDefault();const msg=document.getElementById('contactFormMsg');if(msg)msg.textContent='';const name=form.elements.contactName.value.trim(),id=cedula.value,email=form.elements.contactEmail.value.trim(),phone=form.elements.contactPhone.value.trim(),comment=form.elements.contactComment.value.trim();if(!name||!id||!email||!phone||!comment){if(msg)msg.textContent=t('contactFormRequired');return}if(!isValidEcuadorianCedula(id)){if(msg)msg.textContent=t('contactFormCedula');cedula.focus();return}if(!form.elements.contactEmail.checkValidity()||!isValidEmailSyntax(email)){if(msg)msg.textContent=t('contactFormEmail');form.elements.contactEmail.focus();return}if(!/^0[0-9]{9}$/.test(phone)){if(msg)msg.textContent=t('contactFormPhone');form.elements.contactPhone.focus();return}const subject=encodeURIComponent('Consulta desde la página web de LABS');const body=encodeURIComponent('Nombres completos: '+name+'\nCédula: '+id+'\nTeléfono: '+phone+'\nCorreo electrónico: '+email+'\n\nComentario o consulta:\n'+comment);if(msg)msg.textContent=t('contactFormOpenEmail');window.location.href='mailto:info@labs.ec?subject='+subject+'&body='+body})}
 
+function initNotesSearch(){
+  const search = document.getElementById('search');
+  const button = document.getElementById('searchBtn');
+  if (!search) return;
+  search.addEventListener('input', () => renderNotesList(search.value));
+  button?.addEventListener('click', () => renderNotesList(search.value));
+}
 function initLogin(){const form=document.getElementById('loginForm');if(!form)return;const notice=document.getElementById('loginNotice');const show=(key)=>{if(notice){notice.hidden=false;notice.querySelector('[data-login-message]').textContent=t(key);}};form.addEventListener('submit',e=>{e.preventDefault();show('loginUnavailable')});document.querySelectorAll('[data-login-flow]').forEach(link=>link.addEventListener('click',e=>{e.preventDefault();show('loginFlowUnavailable')}));}
 function initHome(){const slides=[...document.querySelectorAll('.slide')],dots=[...document.querySelectorAll('.dots button')];if(slides.length){let idx=0;const go=i=>{idx=i;slides.forEach((s,j)=>s.classList.toggle('active',j===i));dots.forEach((d,j)=>d.classList.toggle('active',j===i))};dots.forEach(d=>d.addEventListener('click',()=>go(+d.dataset.i)));setInterval(()=>go((idx+1)%slides.length),6000)}}
-document.addEventListener('DOMContentLoaded',()=>{initMenu();initCookie();initLanguage();initQuote();initContactForm();initLogin();initHome();initArticle()});
+document.addEventListener('DOMContentLoaded',()=>{initMenu();initCookie();initLanguage();initQuote();initContactForm();initLogin();initHome();initNotesSearch();renderNotesList(document.getElementById('search')?.value || '');initArticle()});
