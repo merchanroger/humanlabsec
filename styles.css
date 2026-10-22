@@ -917,7 +917,7 @@ img {
         margin-left:0
     }
 }
-/* Logo oficial (assets/logo.jpeg) */ .brandLogo {
+/* Logotipo oficial PNG, compartido en cabecera y pie de página. */ .brandLogo {
     height:46px;
     width:auto;
     display:block
